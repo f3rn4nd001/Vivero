@@ -1,0 +1,170 @@
+@charset "UTF-8";
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+:root {
+  --off-canvas: 50;
+  --text-index: 40;
+  --front: 30;
+  --middle-front: 25;
+  --middle: 20;
+  --middle-back: 15;
+  --back: 10;
+  --hide: 5;
+}
+@font-face {
+  font-family: Liu Jian Mao Cao;
+  src: url(https://dl.dropboxusercontent.com/s/3qhnhso4eyxl2d7/LiuJianMaoCao-Regular.ttf?dl=0);
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  font-size: 1.05vw;
+  font-family: Liu Jian Mao Cao, cursive;
+  color: #fff;
+}
+body,
+main {
+  height: 100vh;
+  width: 100%;
+}
+main {
+  position: relative;
+  clip-path: circle(0 at 50% 50%);
+  animation: body-circle 208s linear forwards;
+}
+@keyframes body-circle {
+  2.5%,
+  94% {
+    clip-path: circle(100% at 50% 50%);
+  }
+  97% {
+    clip-path: circle(0 at 50% 50%);
+  }
+}
+.circle {
+  border-radius: 50%;
+}
+[class*="button"] {
+  position: fixed;
+  left: 1rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 2.5rem;
+  z-index: var(--front);
+  opacity: 0.25;
+}
+[class*="button"]:hover {
+  opacity: 1;
+}
+.button-audio {
+  top: 1rem;
+}
+.button-audio:before {
+  content: "🔊";
+}
+.button-audio.muted:before {
+  content: "🔇";
+}
+.button-full {
+  top: 5rem;
+}
+.button-full:before {
+  content: "🖥️";
+}
+.button-full.full:before {
+  content: "👈";
+}
+audio {
+  display: none;
+}
+.active-audio {
+  --size: 1.75rem;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  top: 1rem;
+  left: 6rem;
+  padding: 0.55rem;
+  height: 1.75rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  background: #fdaf1a;
+  animation: active-audio 0.75s ease-in-out infinite alternate;
+}
+.active-audio,
+.active-audio span {
+  z-index: var(--front);
+}
+.active-audio:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: inherit;
+  transform: translateX(-50%) rotate(45deg);
+  z-index: 1;
+}
+@keyframes active-audio {
+  to {
+    transform: translateX(1rem);
+  }
+}
+.copy {
+  font-family: sans-serif;
+  font-size: 14px;
+  position: fixed;
+  top: 3.75rem;
+  left: 6rem;
+}
+@media screen and (min-width: 600px) {
+  .copy br {
+    display: none;
+  }
+}
+.bush {
+  position: absolute;
+  left: 17.2em;
+  transform: translateY(0.8em);
+  z-index: -1;
+}
+.bush .circle {
+  position: absolute;
+  background: #5fc234;
+}
+.bush .circle:first-of-type {
+  width: 2em;
+  height: 2em;
+}
+.bush .circle:nth-of-type(2) {
+  width: 0.6em;
+  height: 1em;
+  left: 1.7em;
+  bottom: -1.9em;
+  transform: rotate(19deg);
+}
+.bush .circle:nth-of-type(3) {
+  width: 0.6em;
+  height: 1em;
+  left: 1.9em;
+  bottom: -2.3em;
+  transform: rotate(31.5deg);
+}
+.cloud {
+  position: absolute;
+  bottom: -0.5em;
+}
+.cloud .circle {
+  --color: #eee;
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  background: var(--color);
+}

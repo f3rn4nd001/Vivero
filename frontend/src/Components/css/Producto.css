@@ -1,0 +1,39 @@
+button{
+    /* estilos tipograficos */
+    
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    /* padding, margin y borde */
+    
+      padding: 20px 40px;
+    margin-right: 30px;
+    cursor: pointer;
+    border: 0;
+      border-radius: 50px;
+  
+    /* propiedades para la animacion  */
+    
+    transition: all 0.20s linear;
+    -webkit-transition: all 0.20s linear;
+    -moz-transition: all 0.20s linear;
+    position: relative;
+    bottom: 0;
+  }
+  .azul{
+    background: #04a8bf;
+    box-shadow: 0px 5px 0 #0491a5;
+  }
+  .button:active{
+    bottom: -5px;
+  }
+  .azul:active{
+    box-shadow:0 0 0 #0491a5, inset 0 0 5px rgba(0, 0, 0, 0.4);     
+  }
+  .azul{
+    background: #04a8bf;
+    box-shadow: 0px 5px 0 #0491a5;
+  }

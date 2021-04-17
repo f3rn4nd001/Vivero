@@ -1,0 +1,15 @@
+const express =require('express');
+const UsuarioRoutes = express.Router();
+const {verificarToken} = require('../Mid/Token');
+const UsuarioController=require('../Controllers/UsuariosController');
+UsuarioRoutes.MostrarPerfil=(UsuarioController.GetUsuariosperfil);
+UsuarioRoutes.Registrarusuario=(UsuarioController.PostUsuarios);
+UsuarioRoutes.Mostar=(UsuarioController.GetUsuario);
+//router.put('/:id',usuarioController.usuarioPut);
+UsuarioRoutes.LogearUsuario=(UsuarioController.PostLoginUsuario);
+UsuarioRoutes.Eliminarusuario=(UsuarioController.DeleteUsuario);
+UsuarioRoutes.LogearUsuarioToken=(UsuarioController.LogearUsuarioToken);
+UsuarioRoutes.MostrarPerfilel=(UsuarioController.MostrarPerfilel);
+UsuarioRoutes.Editarusuario=(UsuarioController.Editarusuario);
+UsuarioRoutes.EditarusuarioPerfil=(UsuarioController.EditarusuarioPerfil);
+module.exports = UsuarioRoutes;
